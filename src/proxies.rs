@@ -1,4 +1,4 @@
-#[cfg(feature = "eh-alpha")]
+#[cfg(feature = "eh-1")]
 use embedded_hal_alpha::i2c as i2c_alpha;
 
 use embedded_hal::adc;
@@ -100,7 +100,7 @@ where
 
 // Implementations for the embedded_hal alpha
 
-#[cfg(feature = "eh-alpha")]
+#[cfg(feature = "eh-1")]
 impl<'a, M: crate::BusMutex> i2c_alpha::ErrorType for I2cProxy<'a, M>
 where
     M::Bus: i2c_alpha::ErrorType,
@@ -108,7 +108,7 @@ where
     type Error = <M::Bus as i2c_alpha::ErrorType>::Error;
 }
 
-#[cfg(feature = "eh-alpha")]
+#[cfg(feature = "eh-1")]
 impl<'a, M: crate::BusMutex> i2c_alpha::I2c for I2cProxy<'a, M>
 where
     M::Bus: i2c_alpha::I2c,
